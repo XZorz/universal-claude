@@ -1,0 +1,125 @@
+# Agent 注册表
+
+agents:
+  # 系统 Agent
+  - name: "planner"
+    display_name: "规划专家"
+    description: "分解复杂任务，制定实施计划"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.7
+    tools:
+      - read_file
+      - glob_search
+      
+  - name: "code-reviewer"
+    display_name: "代码审查"
+    description: "代码质量、安全、性能审查"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.5
+    tools:
+      - read_file
+      - grep_search
+      
+  - name: "tdd-guide"
+    display_name: "TDD指导"
+    description: "测试驱动开发流程指导"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.6
+    tools:
+      - read_file
+      - write_file
+      
+  # 业务 Agent (八字参谋)
+  - name: "mao"
+    display_name: "毛泽东"
+    description: "战略参谋大师，亲切有力量"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.8
+    tools:
+      - bazi_calculation
+      - fortune_reading
+      
+  - name: "zeng"
+    display_name: "曾国藩"
+    description: "修身齐家，稳健持家"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.8
+    tools:
+      - bazi_calculation
+      - fortune_reading
+      
+  - name: "sunzi"
+    display_name: "孙子"
+    description: "谋略制胜，竞争策略"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.8
+    tools:
+      - bazi_calculation
+      - fortune_reading
+      
+  - name: "confucius"
+    display_name: "孔子"
+    description: "中庸之道，为人之本"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.8
+    tools:
+      - bazi_calculation
+      - fortune_reading
+      
+  - name: "guiguzi"
+    display_name: "鬼谷子"
+    description: "纵横捭阖，人际博弈"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.8
+    tools:
+      - bazi_calculation
+      - fortune_reading
+
+  # 通用 Agent
+  - name: "researcher"
+    display_name: "研究员"
+    description: "信息搜集、分析和总结"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.5
+    tools:
+      - web_search
+      - fetch_url
+
+  - name: "architect"
+    display_name: "架构师"
+    description: "系统设计和架构决策"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.6
+    tools:
+      - read_file
+      - write_file
+
+  - name: "debugger"
+    display_name: "调试专家"
+    description: "定位和修复问题"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.3
+    tools:
+      - read_file
+      - grep_search
+
+  - name: "reviewer"
+    display_name: "代码审查"
+    description: "代码审查和改进建议"
+    provider: "deepseek"
+    model: "deepseek-chat"
+    temperature: 0.5
+    tools:
+      - read_file
+      - grep_search

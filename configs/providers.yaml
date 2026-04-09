@@ -1,0 +1,18 @@
+# LLM Provider 配置
+
+providers:
+  deepseek:
+    name: "DeepSeek"
+    base_url: "https://api.deepseek.com/v1"
+    default_model: "deepseek-chat"
+    temperature: 0.7
+    max_tokens: 2000
+    
+  claude:
+    name: "Anthropic Claude"
+    base_url: "https://api.anthropic.com/v1"
+    default_model: "claude-sonnet-4-6"
+    temperature: 0.7
+    max_tokens: 2000
+
+default_provider: "deepseek"

@@ -1,0 +1,89 @@
+# 工具注册表
+
+tools:
+  # 基础工具
+  - name: "read_file"
+    description: "读取文本文件"
+    permission: "read_only"
+    schema:
+      type: "object"
+      properties:
+        path:
+          type: "string"
+          description: "文件路径"
+      required: ["path"]
+      
+  - name: "write_file"
+    description: "写入文本文件"
+    permission: "workspace_write"
+    schema:
+      type: "object"
+      properties:
+        path:
+          type: "string"
+        content:
+          type: "string"
+      required: ["path", "content"]
+      
+  - name: "glob_search"
+    description: "按模式查找文件"
+    permission: "read_only"
+    schema:
+      type: "object"
+      properties:
+        pattern:
+          type: "string"
+      required: ["pattern"]
+      
+  - name: "grep_search"
+    description: "正则搜索文件内容"
+    permission: "read_only"
+    schema:
+      type: "object"
+      properties:
+        pattern:
+          type: "string"
+        path:
+          type: "string"
+          default: "."
+      required: ["pattern"]
+      
+  # 八字参谋工具
+  - name: "bazi_calculation"
+    description: "根据出生日期计算八字"
+    permission: "read_only"
+    schema:
+      type: "object"
+      properties:
+        birth_date:
+          type: "string"
+          description: "出生日期 YYYY-MM-DD"
+        birth_time:
+          type: "string"
+          description: "出生时间 HH:MM"
+          default: "00:00"
+      required: ["birth_date"]
+      
+  - name: "fortune_reading"
+    description: "解读八字运势"
+    permission: "read_only"
+    schema:
+      type: "object"
+      properties:
+        bazi:
+          type: "string"
+          description: "八字 (如 癸酉 辛酉 辛丑 戊戌)"
+        date:
+          type: "string"
+          description: "日期 YYYY-MM-DD"
+      required: ["bazi", "date"]
+      
+  - name: "five_elements_analysis"
+    description: "五行旺衰分析"
+    permission: "read_only"
+    schema:
+      type: "object"
+      properties:
+        bazi:
+          type: "string"
+      required: ["bazi"]
